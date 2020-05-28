@@ -1,5 +1,6 @@
 # Introdction:
-A CocoaPods library written in Swift for the Revcontent to enables you to receive the same ad fill you would see in our traditional ad placements in a more flexible format.
+Revcontent's iOS library written in Swift for enables you quickly and reliably include our JS widgets into your application.
+
 # Prerequesties
 - XCode Version >= 10.x
 - iOS Version >=10.0
@@ -30,9 +31,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         RCNativeiOSSDK.setup()
         let widget = RCNactiveJSWidgetView.init(frame: self.view.frame)
+        // WidgetId is required.
         widget.setWidgetId(widgetId: "66620")
-        widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // It is Optional
-        //   widget.setWidgetSubId(widgetId:"66620", widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // You can also use this way.
+        // WidgetSubId is optional.
+        widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
+        // baseUrl is optional.
+        widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
         self.view.addSubview(widget)
         widget.loadWidget()
     }

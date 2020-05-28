@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-private let baseURL = "https://performance.revcontent.dev"
+private let defaultBaseURL = "https://performance.revcontent.dev"
 private let widgetHostKey = "{widget-host}"
 private let widgetHostVal = "habitat"
 private let endPointKey = "{endpoint}"
@@ -29,6 +29,8 @@ public class RCNactiveJSWidgetView: WKWebView {
     private var htmlWidget:String?
     private var widgetId:String?
     private var siteUrl:String?
+    private var baseUrl:String?
+
     private var widgetSubId:[String:String]?
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -47,6 +49,9 @@ public class RCNactiveJSWidgetView: WKWebView {
     private func setSiteUrl(siteUrl:String){
            self.siteUrl = siteUrl
     }
+    public func setBaseUrl(baseUrl:String){
+           self.baseUrl = baseUrl
+    }
     public func setWidgetSubId(widgetSubId:[String:String]){
         self.widgetSubId = widgetSubId
     }
@@ -58,7 +63,11 @@ public class RCNactiveJSWidgetView: WKWebView {
         let message = validateWidget()
         if (message == nil){
             let html = self.generateWidgetHTML();
-            self.loadHTMLString(html, baseURL: URL.init(string: baseURL))
+            if let baseUrl = self.baseUrl{
+                self.loadHTMLString(html, baseURL: URL.init(string: baseUrl))
+            }else{
+                self.loadHTMLString(html, baseURL: URL.init(string: defaultBaseURL))
+            }
         }else{
             NSLog(message!)
         }

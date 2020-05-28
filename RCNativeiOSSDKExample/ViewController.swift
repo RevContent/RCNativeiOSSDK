@@ -16,6 +16,8 @@ class ViewController: UIViewController {
               let widget = RCNactiveJSWidgetView.init(frame: self.view.frame)
               widget.setWidgetId(widgetId: "66620")
               widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // It is Optional
+             widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+
               //   widget.setWidgetSubId(widgetId:"66620", widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // You can also use this way.
               self.view.addSubview(widget)
               widget.loadWidget()
