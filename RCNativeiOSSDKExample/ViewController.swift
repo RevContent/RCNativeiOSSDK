@@ -12,15 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        RCNativeiOSSDK.setup()
-              let widget = RCNactiveJSWidgetView.init(frame: self.view.frame)
-              widget.setWidgetId(widgetId: "66620")
-              widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // It is Optional
-             widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
-
-              //   widget.setWidgetSubId(widgetId:"66620", widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // You can also use this way.
-              self.view.addSubview(widget)
-              widget.loadWidget()
+       RCNativeiOSSDK.setup()
+               let widget = RCNactiveJSWidgetView.init(frame: self.view.frame)
+               // WidgetId is required.
+        widget.setWidgetId(widgetId: "66620")
+               // WidgetSubId is optional.
+               widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
+               // baseUrl is optional.
+               widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+               self.view.addSubview(widget)
+               widget.loadWidget()
         // Do any additional setup after loading the view.
     }
 
