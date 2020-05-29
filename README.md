@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         widget.setWidgetId(widgetId: "66620")
         // WidgetSubId is optional.
         widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
-        // baseUrl is optional.
-        widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+        // Set baseUrl 
+        widget.setBaseUrl(baseUrl: "https://www.yoursite.com/article")
         self.view.addSubview(widget)
         widget.loadWidget()
     }
