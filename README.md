@@ -1,7 +1,7 @@
-# Introdction:
+# Introduction:
 Revcontent's iOS library written in Swift for enables you quickly and reliably include our JS widgets into your application.
 
-# Prerequesties
+# Prerequisites
 - XCode Version >= 10.x
 - iOS Version >=10.0
 # Features
