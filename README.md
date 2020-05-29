@@ -4,10 +4,12 @@ Revcontent's iOS library written in Swift for enables you quickly and reliably i
 # Prerequisites
 - XCode Version >= 10.x
 - iOS Version >=10.0
+
 # Features
 - Load widget by WidgetId
 - Load widget by SubId (Optional)
 - Flexible widget size
+- Define Base URL with FQDN or Article URL
 - Add widget programmatically or by creating IBOutlets from Storyboard/Xibs.
 # Installation
 - Create a new project in Xcode as you would normally `for e.g. MyApp`.
