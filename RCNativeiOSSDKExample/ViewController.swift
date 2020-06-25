@@ -8,6 +8,8 @@
 
 import UIKit
 import RCNativeiOSSDK
+import UIKit
+import RCNativeiOSSDK
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -27,4 +29,3 @@ class ViewController: UIViewController {
 
 
 }
-

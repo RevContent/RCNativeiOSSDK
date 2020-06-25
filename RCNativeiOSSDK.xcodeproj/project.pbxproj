@@ -15,6 +15,7 @@
 		18657F66247629B200263867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18657F64247629B200263867 /* LaunchScreen.storyboard */; };
 		18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6B24762A2200263867 /* RCNactiveJSWidgetView.swift */; };
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
+		1879AA6024A2281100DE9745 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879AA5F24A2281100DE9745 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		18657F67247629B200263867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18657F6B24762A2200263867 /* RCNactiveJSWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNactiveJSWidgetView.swift; sourceTree = "<group>"; };
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
+		1879AA5F24A2281100DE9745 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				18657F62247629B200263867 /* Assets.xcassets */,
 				18657F64247629B200263867 /* LaunchScreen.storyboard */,
 				18657F67247629B200263867 /* Info.plist */,
+				1879AA5F24A2281100DE9745 /* CollectionViewCell.swift */,
 			);
 			path = RCNativeiOSSDKExample;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				18657F5E247629AF00263867 /* ViewController.swift in Sources */,
 				18657F5A247629AF00263867 /* AppDelegate.swift in Sources */,
+				1879AA6024A2281100DE9745 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

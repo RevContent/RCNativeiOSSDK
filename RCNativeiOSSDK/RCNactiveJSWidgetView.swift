@@ -38,7 +38,20 @@ public class RCNactiveJSWidgetView: WKWebView {
         self.loadHTMLContent()
     }
     private func loadHTMLContent(){
-     self.htmlWidget = "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><div id=\"widget1\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\"></div><script src=\"{js-src}\" defer=\"{defer}\"></script>"
+     self.htmlWidget =
+        """
+        <!doctype html>
+        <html>
+            <head>
+                <style>
+                    html, body { margin:0; padding: 0; }
+                </style>
+            </head>
+            <body>
+                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><div id=\"widget1\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\"></div><script src=\"{js-src}\" defer=\"{defer}\"></script>
+            </body>
+        </html>
+        """
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
