@@ -49,6 +49,7 @@ public class RCNactiveJSWidgetView: WKWebView {
                     @media (prefers-color-scheme: dark) {
                       html, body {
                         background: #000;
+                        }
                     }
                 </style>
             </head>
