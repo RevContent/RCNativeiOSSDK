@@ -45,6 +45,11 @@ public class RCNactiveJSWidgetView: WKWebView {
             <head>
                 <style>
                     html, body { margin:0; padding: 0; }
+
+                    @media (prefers-color-scheme: dark) {
+                      html, body {
+                        background: #000;
+                    }
                 </style>
             </head>
             <body>
@@ -85,7 +90,7 @@ public class RCNactiveJSWidgetView: WKWebView {
             NSLog(message!)
         }
     }
-    
+
     private func validateWidget()->String?{
         if(!RCNativeiOSSDK.initiliazed()){
             return "RCSDK -> SDK not initialzied."
