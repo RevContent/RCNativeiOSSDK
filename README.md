@@ -1,13 +1,15 @@
-# Introdction:
+# Introduction:
 Revcontent's iOS library written in Swift for enables you quickly and reliably include our JS widgets into your application.
 
-# Prerequesties
+# Prerequisites
 - XCode Version >= 10.x
 - iOS Version >=10.0
+
 # Features
 - Load widget by WidgetId
 - Load widget by SubId (Optional)
 - Flexible widget size
+- Define Base URL with FQDN or Article URL
 - Add widget programmatically or by creating IBOutlets from Storyboard/Xibs.
 # Installation
 - Create a new project in Xcode as you would normally `for e.g. MyApp`.
@@ -35,8 +37,8 @@ class ViewController: UIViewController {
         widget.setWidgetId(widgetId: "66620")
         // WidgetSubId is optional.
         widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
-        // baseUrl is optional.
-        widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+        // Set baseUrl 
+        widget.setBaseUrl(baseUrl: "https://www.yoursite.com/article")
         self.view.addSubview(widget)
         widget.loadWidget()
     }
