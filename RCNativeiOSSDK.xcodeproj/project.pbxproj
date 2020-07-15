@@ -15,6 +15,9 @@
 		18657F66247629B200263867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18657F64247629B200263867 /* LaunchScreen.storyboard */; };
 		18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6B24762A2200263867 /* RCNactiveJSWidgetView.swift */; };
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
+		656C3B3E24BF405700102B75 /* WidgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C3B3D24BF405700102B75 /* WidgetCollectionViewCell.swift */; };
+		657DEEDD24BCBF3B00828536 /* ShowWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DEEDC24BCBF3B00828536 /* ShowWidgetViewController.swift */; };
+		6581B43924BE24AF00D15039 /* WidgetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581B43824BE24AF00D15039 /* WidgetCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		18657F67247629B200263867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18657F6B24762A2200263867 /* RCNactiveJSWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNactiveJSWidgetView.swift; sourceTree = "<group>"; };
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
+		656C3B3D24BF405700102B75 /* WidgetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCollectionViewCell.swift; sourceTree = "<group>"; };
+		657DEEDC24BCBF3B00828536 /* ShowWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWidgetViewController.swift; sourceTree = "<group>"; };
+		6581B43824BE24AF00D15039 /* WidgetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 			children = (
 				18657F59247629AF00263867 /* AppDelegate.swift */,
 				18657F5D247629AF00263867 /* ViewController.swift */,
+				657DEEDC24BCBF3B00828536 /* ShowWidgetViewController.swift */,
+				6581B43824BE24AF00D15039 /* WidgetCollectionViewController.swift */,
+				656C3B3D24BF405700102B75 /* WidgetCollectionViewCell.swift */,
 				18657F5F247629AF00263867 /* Main.storyboard */,
 				18657F62247629B200263867 /* Assets.xcassets */,
 				18657F64247629B200263867 /* LaunchScreen.storyboard */,
@@ -215,6 +224,9 @@
 			files = (
 				18657F5E247629AF00263867 /* ViewController.swift in Sources */,
 				18657F5A247629AF00263867 /* AppDelegate.swift in Sources */,
+				6581B43924BE24AF00D15039 /* WidgetCollectionViewController.swift in Sources */,
+				656C3B3E24BF405700102B75 /* WidgetCollectionViewCell.swift in Sources */,
+				657DEEDD24BCBF3B00828536 /* ShowWidgetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RCNativeiOSSDKExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,6 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RCNativeiOSSDKExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -78,7 +78,8 @@ public class RCNactiveJSWidgetView: WKWebView {
         self.widgetId = widgetId
         self.widgetSubId = widgetSubId
     }
-    public func loadWidget(){
+    public func loadWidget()
+    {
         let message = validateWidget()
         if (message == nil){
             let html = self.generateWidgetHTML();
@@ -112,7 +113,7 @@ public class RCNactiveJSWidgetView: WKWebView {
         result = result.replacingOccurrences(of: endPointKey, with: endPointVal)
         result = result.replacingOccurrences(of: isSecuredKey, with: isSecuredVal)
         result = result.replacingOccurrences(of: widgetIdKey, with: self.widgetId!)
-     //   result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
+        result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
         result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
         result = result.replacingOccurrences(of: deferKey, with: deferVal)
         if(self.widgetSubId != nil){
@@ -120,7 +121,8 @@ public class RCNactiveJSWidgetView: WKWebView {
             let jsonString = String(data: jsonData!, encoding: .utf8)
             let replacedJsonString = jsonString!.replacingOccurrences(of: "\"", with: "&quot;")
             result = result.replacingOccurrences(of: widgetSubIdKey, with: replacedJsonString)
-        }else{
+        }else
+        {
             result = result.replacingOccurrences(of: widgetSubIdKey, with: "")
         }
         return result
@@ -136,6 +138,9 @@ extension RCNactiveJSWidgetView: WKNavigationDelegate{
                }
                let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
                 print (url);
+            webView.frame.size.height = 1
+            webView.frame.size = webView.scrollView.contentSize
+
                if components?.scheme == "http" || components?.scheme == "https"
                {
                    UIApplication.shared.open(url)
