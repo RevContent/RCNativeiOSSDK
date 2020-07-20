@@ -8,16 +8,56 @@
 
 import UIKit
 import RCNativeiOSSDK
+import WebKit
 
-class WidgetCollectionViewController: UIViewController {
+class WidgetCollectionViewController: UIViewController
+{
+    // Instance of WidgetCollectionViewController
+    let widgetID = ["144703","144704","144705","144706","144707","144708","144709","144710", "144711","144712","144713","144750","144751","144752","144754","144755","144756","144757", "144758","144760","144761","144763","144764","144765","144766"] // Widget ID's array for showing multiple diffrent widget on diffrent sizes.
+    
+    //@IBOutlet weak var viewWidget : UIView!
+    let widgetIDGallery = ["144763","144764","144765","144766"] // Widget ID's array for showing multiple diffrent widget on diffrent sizes.
 
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         RCNativeiOSSDK.setup()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        // Get All Cookies list of visited widets.
+        if #available(iOS 11, *) {
+            let dataStore = WKWebsiteDataStore.default()
+            dataStore.httpCookieStore.getAllCookies({ (cookies) in
+                print(cookies)
+                
+                for cookie in cookies {
+                    var cookieProperties = [HTTPCookiePropertyKey: Any]()
+                    cookieProperties[.name] = cookie.name
+                    cookieProperties[.value] = cookie.value
+                    cookieProperties[.domain] = cookie.domain
+                    cookieProperties[.path] = cookie.path
+                    cookieProperties[.version] = cookie.version
+                    cookieProperties[.expires] = Date().addingTimeInterval(31536000)
+                    
+                    let newCookie = HTTPCookie(properties: cookieProperties)
+                    HTTPCookieStorage.shared.setCookie(newCookie!)
+                    print(newCookie!)
+                    print("name: \(cookie.name) value: \(cookie.value)")
+                }
+            })
+        } else {
+            guard let cookies = HTTPCookieStorage.shared.cookies else {
+                return
+            }
+            print(cookies)
+        }
+    }
 }
+
 //MARK: UICollectionViewDataSource
 extension WidgetCollectionViewController : UICollectionViewDataSource
 {
@@ -25,7 +65,6 @@ extension WidgetCollectionViewController : UICollectionViewDataSource
     {
         return 30
     }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? WidgetCollectionViewCell
         cell!.viewWidget.backgroundColor = .random()
@@ -45,18 +84,4 @@ extension WidgetCollectionViewController : UICollectionViewDelegateFlowLayout
     }
 }
 
-func createWidget(_ widId : String) -> RCNactiveJSWidgetView
-{
-    let widget = RCNactiveJSWidgetView.init(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
-    // WidgetId is required.
-    widget.backgroundColor = .random()
-    widget.setWidgetId(widgetId: widId)
-    // WidgetSubId is optional.
-    widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
-    // baseUrl is optional.
-    widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
-    //self.view.addSubview(widget)
-    widget.loadWidget()
-    return widget
-}
 

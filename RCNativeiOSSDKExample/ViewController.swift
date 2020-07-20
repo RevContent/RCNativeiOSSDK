@@ -13,9 +13,10 @@ import RCNativeiOSSDK
 class ViewController: UIViewController
 {
     // Instance
-    var tableData = ["Example Full Screen", "Example 1/3 Of Screen", "Example 1/8 Of Screen", "Example 100 widget of 1x1"]
+    var tableData = ["Example Full Screen", "Example 1/2 Of Screen",  "Example 1/3 Of Screen", "Example 1/4 Of Screen", "Example 1/5 Of Screen", "Example 1/6 Of Screen", "Example 1/7 Of Screen", "Example 1/8 Of Screen", "Example 1/9 Of Screen", "Example 1/10 Of Screen", "Example 1/11 Of Screen", "Example 1/12 Of Screen", "Example 1/13 Of Screen", "Example 1/14 Of Screen", "Example 1/15 Of Screen", "Example 1/16 Of Screen", "Example 1/17 Of Screen", "Example 1/18 Of Screen", "Example 1/19 Of Screen", "Example 1/20 Of Screen", "Example 1/21 Of Screen", "Example 1/22 Of Screen", "Example 30 widget of 1x1"]
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -47,21 +48,15 @@ extension ViewController : UITableViewDelegate
             vc!.widgetCount = 1
             self.navigationController?.pushViewController(vc!, animated: true)
         }
-        else if indexPath.row == 1
-        {
-            let vc = storyboard?.instantiateViewController(identifier: "ShowWidgetViewController") as? ShowWidgetViewController
-            vc!.widgetCount = 3
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
-        else if indexPath.row == 2
-        {
-            let vc = storyboard?.instantiateViewController(identifier: "ShowWidgetViewController") as? ShowWidgetViewController
-            vc!.widgetCount = 8
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
-        else if indexPath.row == 3
+        else if indexPath.row == 22
         {
             let vc = storyboard?.instantiateViewController(identifier: "WidgetCollectionViewController") as? WidgetCollectionViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+        else
+        {
+            let vc = storyboard?.instantiateViewController(identifier: "ShowWidgetViewController") as? ShowWidgetViewController
+            vc!.widgetCount = indexPath.row + 1
             self.navigationController?.pushViewController(vc!, animated: true)
         }
     }

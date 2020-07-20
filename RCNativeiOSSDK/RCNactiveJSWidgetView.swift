@@ -32,11 +32,31 @@ public class RCNactiveJSWidgetView: WKWebView {
     private var baseUrl:String?
 
     private var widgetSubId:[String:String]?
-    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+    override init(frame: CGRect, configuration: WKWebViewConfiguration)
+    {
         super.init(frame: frame, configuration: configuration)
         self.navigationDelegate = self
         self.loadHTMLContent()
     }
+    
+//    override func loadView() {
+//       // if #available(iOS 11, *) {
+//            let preferences = WKPreferences()
+//            preferences.javaScriptEnabled = true
+//            preferences.javaScriptCanOpenWindowsAutomatically = true
+//            let webConfiguration = WKWebViewConfiguration()
+//            webConfiguration.preferences = preferences
+//
+//            RCNactiveJSWidgetView = WKWebView(frame: .zero, configuration: webConfiguration)
+//
+//            let userAgentValue = "Chrome/56.0.0.0 Mobile"
+//            RCNactiveJSWidgetView.customUserAgent = userAgentValue
+//            RCNactiveJSWidgetView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            RCNactiveJSWidgetView.uiDelegate = self
+//            view = RCNactiveJSWidgetView
+//        //}
+//    }
+    
     private func loadHTMLContent(){
      self.htmlWidget =
         """
@@ -54,11 +74,12 @@ public class RCNactiveJSWidgetView: WKWebView {
                 </style>
             </head>
             <body>
-                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><div id=\"widget1\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\"></div><script src=\"{js-src}\" defer=\"{defer}\"></script>
+                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\"></div><script src=\"{js-src}\" defer=\"{defer}\"></script>
             </body>
         </html>
         """
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -113,7 +134,7 @@ public class RCNactiveJSWidgetView: WKWebView {
         result = result.replacingOccurrences(of: endPointKey, with: endPointVal)
         result = result.replacingOccurrences(of: isSecuredKey, with: isSecuredVal)
         result = result.replacingOccurrences(of: widgetIdKey, with: self.widgetId!)
-        result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
+        //result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
         result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
         result = result.replacingOccurrences(of: deferKey, with: deferVal)
         if(self.widgetSubId != nil){

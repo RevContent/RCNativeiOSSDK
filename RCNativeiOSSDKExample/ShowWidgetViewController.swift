@@ -8,14 +8,15 @@
 
 import UIKit
 import RCNativeiOSSDK
+import WebKit
 
 class ShowWidgetViewController: UIViewController {
 
-    // Instance
-    var widgetCount = 0
-    var statusBarHeight: CGFloat = 0
-    let widgetID = ["66620","66620","66620","66620","66620","66620","66620","66620"]
-    
+    // Instance of ShowWidgetViewController
+    var widgetCount = 0 // Count of widget display on view.
+    var statusBarHeight: CGFloat = 0 // For Status Bar Height
+    let widgetID = ["144705", "144703","144704","144705","144706","144707","144708","144709","144710", "144711","144712","144713","144750","144751","144752","144754","144755","144756","144757", "144758","144760","144761"] // Widget ID's array for showing multiple diffrent widget on diffrent sizes.
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,17 +36,36 @@ class ShowWidgetViewController: UIViewController {
         let deviceHeight = self.view.bounds.height - navBarHeight
         
         // Create Widget on views
-        for i in 0..<widgetCount
-        {
-            let Yvalue = CGFloat(i)*deviceHeight/CGFloat(widgetCount)
-            let viewWidget = UIView.init(frame: CGRect(x: 0, y: (Yvalue + navBarHeight) , width: self.view.bounds.width, height: deviceHeight/CGFloat(widgetCount)))
-            viewWidget.backgroundColor = .random()
-            viewWidget.addSubview(self.createWidget(widgetID[i]))
-            self.view.addSubview(viewWidget)
+        DispatchQueue.main.async {
+            for i in 0..<self.widgetCount
+            {
+                print((self.widgetID[(self.widgetCount-1)]))
+                let Yvalue = CGFloat(i)*deviceHeight/CGFloat(self.widgetCount)
+                let viewWidget = UIView.init(frame: CGRect(x: 0, y: (Yvalue + navBarHeight) , width: self.view.bounds.width, height: deviceHeight/CGFloat(self.widgetCount)))
+                viewWidget.backgroundColor = .random()
+                viewWidget.addSubview(self.createWidget(self.widgetID[(self.widgetCount-1)]))
+                self.view.addSubview(viewWidget)
+            }
         }
     }
     
-    // RCNactiveJSWidgetView For Ad
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        // Get All Cookies list of visited widets.
+        if #available(iOS 11, *) {
+            let dataStore = WKWebsiteDataStore.default()
+            dataStore.httpCookieStore.getAllCookies({ (cookies) in
+                print(cookies)
+            })
+        } else {
+            guard let cookies = HTTPCookieStorage.shared.cookies else {
+                return
+            }
+            print(cookies)
+        }
+    }
+
+    // Creat Widget function of RCNactiveJSWidgetView For Ad
     func createWidget(_ widId : String) -> RCNactiveJSWidgetView
     {
         RCNativeiOSSDK.setup()
@@ -62,7 +82,7 @@ class ShowWidgetViewController: UIViewController {
         return widget
     }
 }
-// Random color to define rows
+// Random color function to define rows
 extension CGFloat {
     static func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
