@@ -30,7 +30,7 @@ public class RCNactiveJSWidgetView: WKWebView {
     private var widgetId:String?
     private var siteUrl:String?
     private var baseUrl:String?
-
+    
     private var widgetSubId:[String:String]?
     override init(frame: CGRect, configuration: WKWebViewConfiguration)
     {
@@ -39,43 +39,43 @@ public class RCNactiveJSWidgetView: WKWebView {
         self.loadHTMLContent()
     }
     
-//    override func loadView() {
-//       // if #available(iOS 11, *) {
-//            let preferences = WKPreferences()
-//            preferences.javaScriptEnabled = true
-//            preferences.javaScriptCanOpenWindowsAutomatically = true
-//            let webConfiguration = WKWebViewConfiguration()
-//            webConfiguration.preferences = preferences
-//
-//            RCNactiveJSWidgetView = WKWebView(frame: .zero, configuration: webConfiguration)
-//
-//            let userAgentValue = "Chrome/56.0.0.0 Mobile"
-//            RCNactiveJSWidgetView.customUserAgent = userAgentValue
-//            RCNactiveJSWidgetView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//            RCNactiveJSWidgetView.uiDelegate = self
-//            view = RCNactiveJSWidgetView
-//        //}
-//    }
+    //    override func loadView() {
+    //       // if #available(iOS 11, *) {
+    //            let preferences = WKPreferences()
+    //            preferences.javaScriptEnabled = true
+    //            preferences.javaScriptCanOpenWindowsAutomatically = true
+    //            let webConfiguration = WKWebViewConfiguration()
+    //            webConfiguration.preferences = preferences
+    //
+    //            RCNactiveJSWidgetView = WKWebView(frame: .zero, configuration: webConfiguration)
+    //
+    //            let userAgentValue = "Chrome/56.0.0.0 Mobile"
+    //            RCNactiveJSWidgetView.customUserAgent = userAgentValue
+    //            RCNactiveJSWidgetView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    //            RCNactiveJSWidgetView.uiDelegate = self
+    //            view = RCNactiveJSWidgetView
+    //        //}
+    //    }
     
     private func loadHTMLContent(){
-     self.htmlWidget =
+        self.htmlWidget =
         """
         <!doctype html>
         <html>
-            <head>
-                <style>
-                    html, body { margin:0; padding: 0; }
-
-                    @media (prefers-color-scheme: dark) {
-                      html, body {
-                        background: #000;
-                        }
-                    }
-                </style>
-            </head>
-            <body>
-                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\"></div><script src=\"{js-src}\" defer=\"{defer}\"></script>
-            </body>
+        <head>
+        <style>
+        html, body { margin:0; padding: 0; }
+        
+        @media (prefers-color-scheme: dark) {
+        html, body {
+        background: #000;
+        }
+        }
+        </style>
+        </head>
+        <body>
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\"></div><script src=\"{js-src}\" defer=\"{defer}\"></script>
+        </body>
         </html>
         """
     }
@@ -87,10 +87,10 @@ public class RCNactiveJSWidgetView: WKWebView {
         self.widgetId = widgetId
     }
     private func setSiteUrl(siteUrl:String){
-           self.siteUrl = siteUrl
+        self.siteUrl = siteUrl
     }
     public func setBaseUrl(baseUrl:String){
-           self.baseUrl = baseUrl
+        self.baseUrl = baseUrl
     }
     public func setWidgetSubId(widgetSubId:[String:String]){
         self.widgetSubId = widgetSubId
@@ -113,7 +113,7 @@ public class RCNactiveJSWidgetView: WKWebView {
             NSLog(message!)
         }
     }
-
+    
     private func validateWidget()->String?{
         if(!RCNativeiOSSDK.initiliazed()){
             return "RCSDK -> SDK not initialzied."
@@ -124,9 +124,9 @@ public class RCNactiveJSWidgetView: WKWebView {
         if(self.widgetId == nil){
             return "RCSDK -> RCJSWidgetView: WidgetId is required."
         }
-//        if(self.siteUrl == nil){
-//            return "RCSDK -> RCJSWidgetView: SiteUrl is required."
-//        }
+        //        if(self.siteUrl == nil){
+        //            return "RCSDK -> RCJSWidgetView: SiteUrl is required."
+        //        }
         return nil
     }
     private func generateWidgetHTML()->String{
@@ -152,28 +152,38 @@ public class RCNactiveJSWidgetView: WKWebView {
 
 extension RCNactiveJSWidgetView: WKNavigationDelegate{
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-           if navigationAction.navigationType == .linkActivated {
-               guard let url = navigationAction.request.url else {
-                   decisionHandler(.allow)
-                   return
-               }
-               let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-                print (url);
+        if navigationAction.navigationType == .linkActivated {
+            guard let url = navigationAction.request.url else {
+                decisionHandler(.allow)
+                return
+            }
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            print (url);
             webView.frame.size.height = 1
             webView.frame.size = webView.scrollView.contentSize
-
-               if components?.scheme == "http" || components?.scheme == "https"
-               {
-                   UIApplication.shared.open(url)
-                   decisionHandler(.cancel)
-               } else {
-                   decisionHandler(.allow)
-               }
-           } else if navigationAction.navigationType == .other{
-            print (navigationAction.request.url as Any)
-               decisionHandler(.allow)
-           }else{
-               decisionHandler(.allow)
+            
+            if components?.scheme == "http" || components?.scheme == "https"
+            {
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+            } else {
+                decisionHandler(.allow)
             }
-       }
+        } else if navigationAction.navigationType == .other{
+            print (navigationAction.request.url as Any)
+            decisionHandler(.allow)
+        }else{
+            decisionHandler(.allow)
+        }
+    }
+    
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if webView.isLoading == false {
+            webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { [weak self] (result, error) in
+                if let height = result as? CGFloat {
+                    webView.frame.size.height += height
+                }
+            })
+        }
+    }
 }
