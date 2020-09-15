@@ -28,48 +28,6 @@ end
 - Open the `MyApp.xcworkspace` that was created. This should be the file you use everyday to create your app.
 # Usage
 ```
-import UIKit
-import RCNativeiOSSDK
-
-class MenuViewController: UIViewController
-{
-    // Instance
-    var tableData = ["1x6", "1x7",  "1x8", "1/9", "1/10"]
-    let widgetID = ["144708","144710","144711","144712","144713"]
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-}
-
-// MARK: UITableview Datasource Methods
-extension MenuViewController : UITableViewDataSource
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = tableData[indexPath.row]
-        cell.textLabel?.textAlignment = .left
-        return cell
-    }
-}
-
-// MARK: UITableview Delegate Method
-extension MenuViewController : UITableViewDelegate
-{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        let widgetId = widgetID[indexPath.row]
-            let vc = storyboard?.instantiateViewController(identifier: "WidgetViewController") as? WidgetViewController
-            vc!.widgetId = widgetId
-            self.navigationController?.pushViewController(vc!, animated: true)
-    }
-}
-
 
 //MARK:- WidgetViewController For Create your widget
 
@@ -77,14 +35,11 @@ import UIKit
 import RCNativeiOSSDK
 
 class WidgetViewController: UIViewController {
-
-    @IBOutlet weak var viewWidget : UIView!
-    var widgetId : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         RCNativeiOSSDK.setup()
-        self.viewWidget.addSubview(self.createWidget(widgetId))
+        self.vie.addSubview(self.createWidget("yourWidgetId"))
         // Do any additional setup after loading the view.
     }
     
@@ -102,8 +57,6 @@ class WidgetViewController: UIViewController {
         return widget
     }
 }
-
-
 ```
 # License
 MIT
