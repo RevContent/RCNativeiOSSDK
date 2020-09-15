@@ -2,7 +2,7 @@
 //  WidgetViewController.swift
 //  RCNativeiOSSDKExample
 //
-//  Created by Mayank Palotra on 15/09/20.
+//  Created by Apple on 15/09/20.
 //  Copyright © 2020 Revcontent. All rights reserved.
 //
 
@@ -34,6 +34,4 @@ class WidgetViewController: UIViewController {
         widget.loadWidget()
         return widget
     }
-
-    
 }

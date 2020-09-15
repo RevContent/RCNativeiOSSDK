@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  MenuViewController.swift
 //  RCNativeiOSSDKExample
 //
-//  Created by Apple on 21/05/20.
+//  Created by Apple on 15/09/20.
 //  Copyright © 2020 Revcontent. All rights reserved.
 //
 

@@ -28,20 +28,23 @@ end
 - Open the `MyApp.xcworkspace` that was created. This should be the file you use everyday to create your app.
 # Usage
 ```
+import UIKit
 import RCNativeiOSSDK
-class ViewController: UIViewController
+
+class MenuViewController: UIViewController
 {
     // Instance
-    var tableData = ["Example Full Screen", "Example 1/3 Of Screen", "Example 1/8 Of Screen"]
-    
-    override func viewDidLoad() {
+    var tableData = ["1x6", "1x7",  "1x8", "1/9", "1/10"]
+    let widgetID = ["144708","144710","144711","144712","144713"]
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 }
 
 // MARK: UITableview Datasource Methods
-extension ViewController : UITableViewDataSource
+extension MenuViewController : UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
@@ -50,83 +53,45 @@ extension ViewController : UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = tableData[indexPath.row]
-        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.textAlignment = .left
         return cell
     }
 }
 
 // MARK: UITableview Delegate Method
-extension ViewController : UITableViewDelegate
+extension MenuViewController : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if indexPath.row == 0
-        {
-            let vc = storyboard?.instantiateViewController(identifier: "ShowWidgetViewController") as? ShowWidgetViewController
-            vc!.widgetCount = 1
+        let widgetId = widgetID[indexPath.row]
+            let vc = storyboard?.instantiateViewController(identifier: "WidgetViewController") as? WidgetViewController
+            vc!.widgetId = widgetId
             self.navigationController?.pushViewController(vc!, animated: true)
-        }
-        else if indexPath.row == 1
-        {
-            let vc = storyboard?.instantiateViewController(identifier: "ShowWidgetViewController") as? ShowWidgetViewController
-            vc!.widgetCount = 3
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
-        else
-        {
-            let vc = storyboard?.instantiateViewController(identifier: "ShowWidgetViewController") as? ShowWidgetViewController
-            vc!.widgetCount = 8
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
     }
 }
 
 
-//MARK:- ShowWidgetViewController For Create Multipel widget
+//MARK:- WidgetViewController For Create your widget
 
-class ShowWidgetViewController: UIViewController {
+import UIKit
+import RCNativeiOSSDK
 
-    // Instance
-    var widgetCount = 0
-    let widgetID = ["66620","66620","66620","66620","66620","66620","66620","66620"]
+class WidgetViewController: UIViewController {
+
+    @IBOutlet weak var viewWidget : UIView!
+    var widgetId : String!
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        RCNativeiOSSDK.setup()
+        self.viewWidget.addSubview(self.createWidget(widgetId))
         // Do any additional setup after loading the view.
-        // Status Bar Height
-        var statusBarHeight: CGFloat = 0
-        if #available(iOS 13.0, *) {
-            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            statusBarHeight = UIApplication.shared.statusBarFrame.height
-        }
-        // Naviagtion Bar Height
-        let navBarHeight = statusBarHeight +
-        (self.navigationController?.navigationBar.frame.height ?? 0.0)
-        
-        // Device Height
-        let deviceHeight = self.view.bounds.height - navBarHeight
-        
-        // Create Widget on views
-        for i in 0..<widgetCount
-        {
-            let Yvalue = CGFloat(i)*deviceHeight/CGFloat(widgetCount)
-            let viewWidget = UIView.init(frame: CGRect(x: 0, y: (Yvalue + navBarHeight) , width: self.view.bounds.width, height: deviceHeight/CGFloat(widgetCount)))
-            viewWidget.backgroundColor = .random()
-            viewWidget.addSubview(self.widgetParam(widgetID[i]))
-            self.view.addSubview(viewWidget)
-        }
     }
     
-    // RCNactiveJSWidgetView For Ad
-    func widgetParam(_ widId : String) -> RCNactiveJSWidgetView
+    func createWidget(_ widId : String) -> RCNactiveJSWidgetView
     {
-        RCNativeiOSSDK.setup()
-        let widget = RCNactiveJSWidgetView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/CGFloat(widgetCount)))
+        let widget = RCNactiveJSWidgetView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         // WidgetId is required.
-        widget.backgroundColor = .random()
         widget.setWidgetId(widgetId: widId)
         // WidgetSubId is optional.
         widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
@@ -137,23 +102,6 @@ class ShowWidgetViewController: UIViewController {
         return widget
     }
 }
-// Random color to define rows
-extension CGFloat {
-    static func random() -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
-}
-extension UIColor {
-    static func random() -> UIColor {
-        return UIColor(
-           red:   .random(),
-           green: .random(),
-           blue:  .random(),
-           alpha: 1.0
-        )
-    }
-}
-
 
 
 ```
