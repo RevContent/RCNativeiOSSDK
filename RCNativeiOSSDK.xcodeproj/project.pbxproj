@@ -16,6 +16,7 @@
 		18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6B24762A2200263867 /* RCNactiveJSWidgetView.swift */; };
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
 		651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C036F2510CBB40093D6CD /* WidgetViewController.swift */; };
+		6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		18657F6B24762A2200263867 /* RCNactiveJSWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNactiveJSWidgetView.swift; sourceTree = "<group>"; };
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
 		651C036F2510CBB40093D6CD /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
+		6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherWidgetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				18657F59247629AF00263867 /* AppDelegate.swift */,
 				18657F5D247629AF00263867 /* MenuViewController.swift */,
 				651C036F2510CBB40093D6CD /* WidgetViewController.swift */,
+				6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */,
 				18657F5F247629AF00263867 /* Main.storyboard */,
 				18657F62247629B200263867 /* Assets.xcassets */,
 				18657F64247629B200263867 /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */,
 				18657F5E247629AF00263867 /* MenuViewController.swift in Sources */,
 				651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */,
 				18657F5A247629AF00263867 /* AppDelegate.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  WidgetViewController.swift
+//  AnotherWidgetViewController.swift
 //  RCNativeiOSSDKExample
 //
-//  Created by Apple on 15/09/20.
+//  Created by Mayank Palotra on 17/09/20.
 //  Copyright © 2020 Revcontent. All rights reserved.
 //
 
@@ -10,14 +10,17 @@ import UIKit
 import RCNativeiOSSDK
 import WebKit
 
-class WidgetViewController: UIViewController, WKNavigationDelegate {
+class AnotherWidgetViewController: UIViewController, WKNavigationDelegate {
+
     // MARK:- @IBOutlet's & Connections
     @IBOutlet weak var viewWidget : UIView!
-    @IBOutlet weak var lbltext : UILabel!
+    @IBOutlet weak var lblUppertext : UILabel!
+    @IBOutlet weak var lblLowertext : UILabel!
     @IBOutlet weak var heightView : NSLayoutConstraint!
-    @IBOutlet weak var heightlbltext : NSLayoutConstraint!
+    @IBOutlet weak var heightlblUppertext : NSLayoutConstraint!
     @IBOutlet weak var heightViewWidget : NSLayoutConstraint!
-    
+    @IBOutlet weak var heightlblLowertext : NSLayoutConstraint!
+
     // MARK:- Instance
     lazy var webView: WKWebView = {
         guard
@@ -48,6 +51,7 @@ class WidgetViewController: UIViewController, WKNavigationDelegate {
         return webView
     }()
     var widgetId : String!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +59,7 @@ class WidgetViewController: UIViewController, WKNavigationDelegate {
         webView = self.createWidget(widgetId)
         webView.navigationDelegate = self
         self.viewWidget.addSubview(webView)
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -63,9 +67,12 @@ class WidgetViewController: UIViewController, WKNavigationDelegate {
     {
         super.viewWillLayoutSubviews()
         let font = UIFont(name: "Helvetica", size: 17.0)!
-        let height = heightForView(text: lbltext.text!, font: font, width: self.view.frame.size.width)
-        self.heightlbltext.constant = height + 20
-        self.heightView.constant = height + 20 + self.heightViewWidget!.constant
+        let heightUpperText = heightForView(text: lblUppertext.text!, font: font, width: self.view.frame.size.width)
+        let heightLowerText = heightForView(text: lblLowertext.text!, font: font, width: self.view.frame.size.width)
+        self.heightlblUppertext.constant = heightUpperText + 20
+        self.heightlblLowertext.constant = heightLowerText + 20
+
+        self.heightView.constant = heightUpperText + heightLowerText + 40 + self.heightViewWidget!.constant
     }
     
     func createWidget(_ widId : String) -> RCNactiveJSWidgetView
@@ -97,7 +104,7 @@ class WidgetViewController: UIViewController, WKNavigationDelegate {
             })
         }
     }
-            
+    
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat
     {
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude)) //(0, 0, width, CGFloat.greatestFiniteMagnitude)

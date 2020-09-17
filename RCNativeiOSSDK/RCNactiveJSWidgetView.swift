@@ -79,6 +79,7 @@ public class RCNactiveJSWidgetView: WKWebView {
         </html>
         """
     }
+    //content="initial-scale=1, user-scalable=no,
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -182,6 +183,8 @@ extension RCNactiveJSWidgetView: WKNavigationDelegate{
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { [weak self] (result, error) in
                 if let height = result as? CGFloat {
                     webView.frame.size.height += height
+                    let height = webView.frame.size.height
+                    print(height)
                 }
             })
         }

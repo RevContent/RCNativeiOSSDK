@@ -12,8 +12,8 @@ import RCNativeiOSSDK
 class MenuViewController: UIViewController
 {
     // Instance
-    var tableData = ["1x6", "1x7",  "1x8", "1/9", "1/10"]
-    let widgetID = ["144708","144710","144711","144712","144713"]
+    var tableData = ["1x6", "1x7",  "1x8", "1/9", "1/10", "1x6", "1x7",  "1x8", "1/9", "1/10"]
+    let widgetID = ["144708","144710","144711","144712","144713","144708","144710","144711","144712","144713"]
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -42,9 +42,18 @@ extension MenuViewController : UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let widgetId = widgetID[indexPath.row]
+        if indexPath.row < 5
+        {
             let vc = storyboard?.instantiateViewController(identifier: "WidgetViewController") as? WidgetViewController
             vc!.widgetId = widgetId
             self.navigationController?.pushViewController(vc!, animated: true)
+        }
+        else
+        {
+            let vc = storyboard?.instantiateViewController(identifier: "AnotherWidgetViewController") as? AnotherWidgetViewController
+            vc!.widgetId = widgetId
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
 }
 
