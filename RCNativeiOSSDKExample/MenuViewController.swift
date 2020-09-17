@@ -12,7 +12,7 @@ import RCNativeiOSSDK
 class MenuViewController: UIViewController
 {
     // Instance
-    var tableData = ["1x6", "1x7",  "1x8", "1/9", "1/10", "1x6", "1x7",  "1x8", "1/9", "1/10"]
+    var tableData = ["1x6 Bottom", "1x7 Bottom",  "1x8 Bottom", "1/9 Bottom", "1/10 Bottom", "1x6 Middle", "1x7 Middle",  "1x8 Middle", "1/9 Middle", "1/10 Middle"]
     let widgetID = ["144708","144710","144711","144712","144713","144708","144710","144711","144712","144713"]
     override func viewDidLoad()
     {
