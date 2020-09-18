@@ -39,7 +39,7 @@ class WidgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         RCNativeiOSSDK.setup()
-        self.vie.addSubview(self.createWidget("yourWidgetId"))
+        self.view.addSubview(self.createWidget("yourWidgetId"))
         // Do any additional setup after loading the view.
     }
     
