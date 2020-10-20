@@ -17,6 +17,7 @@
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
 		651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C036F2510CBB40093D6CD /* WidgetViewController.swift */; };
 		6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */; };
+		CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
 		651C036F2510CBB40093D6CD /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherWidgetViewController.swift; sourceTree = "<group>"; };
+		CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeJSWidgetHeightHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */,
 				18657F4B2476291800263867 /* RCNativeiOSSDK.h */,
 				18657F4C2476291800263867 /* Info.plist */,
+				CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */,
 			);
 			path = RCNativeiOSSDK;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */,
 				18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */,
 				18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */,
 			);
