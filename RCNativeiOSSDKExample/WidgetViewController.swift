@@ -15,27 +15,23 @@ class WidgetViewController: UIViewController, WidgetViewable {
   @IBOutlet var viewWidget : UIView!
   @IBOutlet var lbltext : UILabel!
   
-  var webView: RCNactiveJSWidgetView!
-  var widgetId : String!
-    
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    RCNativeiOSSDK.setup()
-    webView = self.createWidget(widgetId, containerView: viewWidget)
-    webView.loadWidget()
-  }
-
-  func createWidget(_ widId : String, containerView: UIView) -> RCNactiveJSWidgetView {
-    //init with default WKWebViewConfiguration
-    let widget = RCNactiveJSWidgetView(containerView: containerView)
+  lazy var widgetView: RCNactiveJSWidgetView = {
+    let widget = RCNactiveJSWidgetView(containerView: viewWidget)
     // WidgetId is required.
-    widget.setWidgetId(widgetId: widId)
+    widget.setWidgetId(widgetId: widgetId)
     // WidgetSubId is optional.
     widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
     // baseUrl is optional.
     widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
     return widget
+  }()
+  
+  var widgetId : String!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    RCNativeiOSSDK.setup()
+    widgetView.loadWidget()
   }
 }
 
