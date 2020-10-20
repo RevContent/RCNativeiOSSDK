@@ -26,38 +26,62 @@ end
 - Save your Podfile.
 - Run `$ pod install`
 - Open the `MyApp.xcworkspace` that was created. This should be the file you use everyday to create your app.
+
 # Usage
+
+ ### Initialisation SDK
+ 
+Should be called before widget usage.
+
+```
+RCNativeiOSSDK.setup()
+```
+### Widget usage
+
+Create widget view.
+```swift  
+lazy var widgetView: RCNactiveJSWidgetView = {
+  let widget = RCNactiveJSWidgetView(containerView: "put_here_container_for_widget")
+  // WidgetId is required.
+  widget.setWidgetId(widgetId: "put_your_widget_id")
+  // WidgetSubId is optional.
+  widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
+  // baseUrl is optional.
+  widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+  return widget
+}()
 ```
 
-//MARK:- WidgetViewController For Create your widget
+Example of using.
 
-import UIKit
-import RCNativeiOSSDK
+```swift
+class ViewController: UIViewController {
 
-class WidgetViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        RCNativeiOSSDK.setup()
-        self.view.addSubview(self.createWidget("yourWidgetId"))
-        // Do any additional setup after loading the view.
-    }
-    
-    func createWidget(_ widId : String) -> RCNactiveJSWidgetView
-    {
-        let widget = RCNactiveJSWidgetView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        // WidgetId is required.
-        widget.setWidgetId(widgetId: widId)
-        // WidgetSubId is optional.
-        widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
-        // baseUrl is optional.
-        widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
-        //self.view.addSubview(widget)
-        widget.loadWidget()
-        return widget
-    }
+  @IBOutlet var widgetContainerView: UIView!
+
+  lazy var widgetView: RCNactiveJSWidgetView = {
+    let widget = RCNactiveJSWidgetView(containerView: widgetContainerView)
+    // WidgetId is required.
+    widget.setWidgetId(widgetId: widgetId)
+    // WidgetSubId is optional.
+    widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
+    // baseUrl is optional.
+    widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+    return widget
+  }()
+  
+  var widgetId : String = "someWidgetId"
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    RCNativeiOSSDK.setup()
+    widgetView.loadWidget()
+  }
 }
+
 ```
+
+
 # License
 MIT
 
