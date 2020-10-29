@@ -80,7 +80,7 @@ class ViewController: UIViewController {
 }
 
 ```
-
+Conform your view controller to  ```RCNativeJSWidgetViewDelegate``` and get information about widgetView height.
 
 # License
 MIT

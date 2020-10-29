@@ -17,8 +17,35 @@
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
 		651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C036F2510CBB40093D6CD /* WidgetViewController.swift */; };
 		6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */; };
+		CE635718254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */; };
+		CE63571C254B0A6F00990D7E /* RCNativeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; };
+		CE63571D254B0A6F00990D7E /* RCNativeiOSSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE63571E254B0A6F00990D7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18657F3F2476291800263867 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18657F472476291800263867;
+			remoteInfo = RCNativeiOSSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE635720254B0A6F00990D7E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE63571D254B0A6F00990D7E /* RCNativeiOSSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		18657F482476291800263867 /* RCNativeiOSSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RCNativeiOSSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +62,7 @@
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
 		651C036F2510CBB40093D6CD /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherWidgetViewController.swift; sourceTree = "<group>"; };
+		CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeJSWidgetViewDelegate.swift; sourceTree = "<group>"; };
 		CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeJSWidgetHeightHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE63571C254B0A6F00990D7E /* RCNativeiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +91,7 @@
 				18657F4A2476291800263867 /* RCNativeiOSSDK */,
 				18657F58247629AF00263867 /* RCNativeiOSSDKExample */,
 				18657F492476291800263867 /* Products */,
+				CE4BBC14253F5AD30058867A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +112,7 @@
 				18657F4B2476291800263867 /* RCNativeiOSSDK.h */,
 				18657F4C2476291800263867 /* Info.plist */,
 				CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */,
+				CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */,
 			);
 			path = RCNativeiOSSDK;
 			sourceTree = "<group>";
@@ -99,6 +130,13 @@
 				18657F67247629B200263867 /* Info.plist */,
 			);
 			path = RCNativeiOSSDKExample;
+			sourceTree = "<group>";
+		};
+		CE4BBC14253F5AD30058867A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +178,12 @@
 				18657F53247629AF00263867 /* Sources */,
 				18657F54247629AF00263867 /* Frameworks */,
 				18657F55247629AF00263867 /* Resources */,
+				CE635720254B0A6F00990D7E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE63571F254B0A6F00990D7E /* PBXTargetDependency */,
 			);
 			name = RCNativeiOSSDKExample;
 			productName = RCNativeiOSSDKExample;
@@ -213,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE635718254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift in Sources */,
 				CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */,
 				18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */,
 				18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */,
@@ -231,6 +272,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE63571F254B0A6F00990D7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18657F472476291800263867 /* RCNativeiOSSDK */;
+			targetProxy = CE63571E254B0A6F00990D7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		18657F5F247629AF00263867 /* Main.storyboard */ = {
@@ -379,7 +428,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9WB9QL8269;
+				DEVELOPMENT_TEAM = 282L6YEX2R;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -407,7 +456,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9WB9QL8269;
+				DEVELOPMENT_TEAM = 282L6YEX2R;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -432,7 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9WB9QL8269;
+				DEVELOPMENT_TEAM = 282L6YEX2R;
 				INFOPLIST_FILE = RCNativeiOSSDKExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -451,7 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9WB9QL8269;
+				DEVELOPMENT_TEAM = 282L6YEX2R;
 				INFOPLIST_FILE = RCNativeiOSSDKExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
