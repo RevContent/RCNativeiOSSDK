@@ -23,6 +23,7 @@ class WidgetViewController: UIViewController, WidgetViewable {
     widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
     // baseUrl is optional.
     widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+    widget.delegate = self
     return widget
   }()
   
@@ -35,3 +36,8 @@ class WidgetViewController: UIViewController, WidgetViewable {
   }
 }
 
+extension WidgetViewController: RCNativeJSWidgetViewDelegate {
+  func widgetView(_ widgetView: RCNactiveJSWidgetView, didUpdateHeight height: CGFloat) {
+    // handle widgetView heigth changes
+  }
+}

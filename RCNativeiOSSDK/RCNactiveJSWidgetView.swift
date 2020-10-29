@@ -48,11 +48,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   
   static fileprivate var defaultConfiguration: WKWebViewConfiguration = {
     let configuration = WKWebViewConfiguration()
-    if #available(iOS 14.0, *) {
-      configuration.defaultWebpagePreferences.allowsContentJavaScript = true
-    } else {
-      configuration.preferences.javaScriptEnabled = true
-    }
+    configuration.preferences.javaScriptEnabled = true
     configuration.allowsInlineMediaPlayback = true
     return configuration
   }()
@@ -60,11 +56,15 @@ public class RCNactiveJSWidgetView: WKWebView {
   lazy var heightHandler: RCNativeJSWidgetHeightHandler = {
     let handler = RCNativeJSWidgetHeightHandler(widgetView: self)
     handler.heightDidChange = { [weak self] newHeight in
-      self?.heightContraint.constant = newHeight
-      self?.layoutIfNeeded()
+      guard let `self` = self else { return }
+      self.heightContraint.constant = newHeight
+      self.layoutIfNeeded()
+      self.delegate?.widgetView(self, didUpdateHeight: newHeight)
     }
     return handler
   }()
+  public weak var delegate: RCNativeJSWidgetViewDelegate?
+  
   
   public init(containerView: UIView,
               configuration: WKWebViewConfiguration? = nil) {
