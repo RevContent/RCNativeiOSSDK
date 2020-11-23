@@ -82,6 +82,14 @@ class ViewController: UIViewController {
 ```
 Conform your view controller to  ```RCNativeJSWidgetViewDelegate``` and get information about widgetView height.
 
+# ads.txt file
+
+[Example](Changelog.md)
+
+ ### Initialisation SDK
+ 
+Should be called before widget usage.
+
 # License
 MIT
 
