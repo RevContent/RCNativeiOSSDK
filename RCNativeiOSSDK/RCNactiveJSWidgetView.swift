@@ -50,6 +50,7 @@ public class RCNactiveJSWidgetView: WKWebView {
     let configuration = WKWebViewConfiguration()
     configuration.preferences.javaScriptEnabled = true
     configuration.allowsInlineMediaPlayback = true
+    configuration.mediaTypesRequiringUserActionForPlayback = .audio
     return configuration
   }()
   
