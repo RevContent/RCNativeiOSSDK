@@ -82,13 +82,47 @@ class ViewController: UIViewController {
 ```
 Conform your view controller to  ```RCNativeJSWidgetViewDelegate``` and get information about widgetView height.
 
-# ads.txt file
-
-[Example](Changelog.md)
-
  ### Initialisation SDK
  
 Should be called before widget usage.
+
+# Changelog
+
+History of all changes is avaliable [here](Changelog.md).
+
+# Ads.txt for Publishers
+
+## What is Ads.txt?
+Ads.txt is an initiative founded by the [IAB Technology Laboratory](https://iabtechlab.com) to increase transparency in the programmatic landscape. The goal is to ensure publishers’ inventory is only sold through authorized partners to prevent counterfeiting in addition to providing advertisers more control over their purchased inventory.
+
+## What exactly is ads.txt?
+- Authorized Digital Sellers (ads.txt for short) is an IAB initiative to improve transparency and reduce fraud in programmatic advertising.
+- Ads.txt is a publicly available file that publishers create and add to their websites. The file is plain text and contains the names of the authorized networks that have permission to sell their inventory.
+
+## How does ads.txt benefit me?
+- The Ads.txt file can help protect your brand from counterfeit inventory that is intentionally mislabeled as originating from a specific domain, app, or video.
+- Declaring authorized sellers will open up more demand as many buyers will not purchase inventory unless they have an ads.txt file outlining authorized to sellers
+
+## How do I create a .txt file?
+Create your file as a text (.txt) using Notepad or a similar program.
+- Your file should be hosted at the root level for your domain.Example: <https://example.com/ads.txt>
+-Root Domain is defined as one level down from the [Public Suffix List](https://publicsuffix.org/list/), which is also how it is defined in the [IAB ads.txt specification](https://iabtechlab.com/ads-txt/). Example: <google.co.uk> would be considered a root domain as co.uk is on the [Public Suffix List](https://publicsuffix.org/list/), but maps.google.co.uk would not be considered a root domain.  
+
+## What information is included in an ads.txt file?
+Publishers should include a separate line in the file for each authorized seller. Each line in a publisher’s ads.txt list requires three pieces of data (plus a fourth optional field)
+-  <Field #1>, <Field #2>, <Field #3>, <Field #4>
+-  The domain name of the advertising system (required) Example: revcontent.com
+- Publisher’s Account ID (required) Example: 12345 (Your publisher ID for Revcontent)
+- Type of Account/Relationship (required) DIRECT - A direct business contract between the publisher and the advertising system RESELLER - Publishers who do not directly control the account indicated in  should specify RESELLER NOTE: This field is case-sensitive and should always be in all-caps for both DIRECT and RESELLER
+- Certification Authority ID (optional) A current certification authority is the Trustworty Accountability Group (TAG), and the TAG ID would be included here.
+
+**Information that needs to be in your ads.txt file as a publisher with Revcontent should be copied directly from the list found inside of your account settings. [Click here](https://www.revcontent.com/ads_txt) to go directly to the relevant page.**
+
+**How do I create an ads.txt file in DFP?**
+Check out [Google’s Step-By-Step Guide](https://support.google.com/dfp_premium/answer/7544382) on ads.txt management in DFP.
+
+**Need more Information?**
+You can learn more about this IAB initiative [here](https://iabtechlab.com/ads-txt/). For more information from Revcontent, feel free to reach out to your Publisher Account Representative.
 
 # License
 MIT
