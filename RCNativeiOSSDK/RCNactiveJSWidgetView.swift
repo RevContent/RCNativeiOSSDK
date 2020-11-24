@@ -23,6 +23,9 @@ private let deferVal = "defer"
 private let widgetIdKey = "{widget-id}"
 private let widgetSubIdKey = "{sub-ids}"
 private let sourceUrlKey = "{source-url}"
+private let gdpr = "{gdpr}"
+private let gdprConsent = "{gdpr-consent}"
+
 
 
 public class RCNactiveJSWidgetView: WKWebView {
@@ -31,6 +34,8 @@ public class RCNactiveJSWidgetView: WKWebView {
   private var siteUrl:String?
   private var baseUrl:String?
   private var widgetSubId:[String:String]?
+  private var isGDPREnabled = false
+  private var GDPRConsent: String?
   
   private weak var containerView: UIView!
   
@@ -103,7 +108,7 @@ public class RCNactiveJSWidgetView: WKWebView {
       </head>
       <body>
       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no\">
-      <div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-sub-ids=\"{sub-ids}\">
+      <div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-gdpr=\"\(gdpr)\" data-gdpr-consent=\"\(gdprConsent)\" data-sub-ids=\"{sub-ids}\">
       </div>
       <script src=\"{js-src}\" defer=\"{defer}\"></script>
       </body>
@@ -144,6 +149,11 @@ public class RCNactiveJSWidgetView: WKWebView {
     self.widgetSubId = widgetSubId
   }
   
+  public func setGDPRConsent(_ consent: String?) {
+    isGDPREnabled = consent != nil
+    GDPRConsent = consent
+  }
+  
   public func loadWidget() {
     if let message = validateWidget(){
       NSLog(message)
@@ -174,6 +184,9 @@ public class RCNactiveJSWidgetView: WKWebView {
 //        result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
     result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
     result = result.replacingOccurrences(of: deferKey, with: deferVal)
+    result = result.replacingOccurrences(of: gdpr, with: isGDPREnabled ? "1" : "0")
+    result = result.replacingOccurrences(of: gdprConsent, with: GDPRConsent ?? "")
+    
     if self.widgetSubId != nil {
       let jsonData = try? JSONSerialization.data(withJSONObject: self.widgetSubId!, options: [])
       let jsonString = String(data: jsonData!, encoding: .utf8)
