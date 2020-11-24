@@ -14,6 +14,34 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>RCNativeiOSSDKTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>18657F472476291800263867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18657F56247629AF00263867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE870AF7256D32D0009E95F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE870B0D256D6EC9009E95F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

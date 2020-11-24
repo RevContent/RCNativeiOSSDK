@@ -2,6 +2,6 @@
 
 **Added**
 - Changelog.md
-
+- Unit and UI tests
 
 

@@ -17,19 +17,35 @@
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
 		651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C036F2510CBB40093D6CD /* WidgetViewController.swift */; };
 		6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */; };
+		CE363434256D934500A833DF /* RCNativeiOSSDKExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */; };
 		CE635718254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */; };
 		CE63571C254B0A6F00990D7E /* RCNativeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; };
 		CE63571D254B0A6F00990D7E /* RCNativeiOSSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE870AFB256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE870AFA256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift */; };
 		CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CE363436256D934500A833DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18657F3F2476291800263867 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18657F56247629AF00263867;
+			remoteInfo = RCNativeiOSSDKExample;
+		};
 		CE63571E254B0A6F00990D7E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18657F3F2476291800263867 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 18657F472476291800263867;
 			remoteInfo = RCNativeiOSSDK;
+		};
+		CE870AFD256D32D0009E95F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18657F3F2476291800263867 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18657F56247629AF00263867;
+			remoteInfo = RCNativeiOSSDKExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,7 +78,13 @@
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
 		651C036F2510CBB40093D6CD /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherWidgetViewController.swift; sourceTree = "<group>"; };
+		CE363431256D934500A833DF /* RCNativeiOSSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCNativeiOSSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDKExampleTests.swift; sourceTree = "<group>"; };
+		CE363435256D934500A833DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeJSWidgetViewDelegate.swift; sourceTree = "<group>"; };
+		CE870AF8256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCNativeiOSSDKExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE870AFA256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDKExampleUITests.swift; sourceTree = "<group>"; };
+		CE870AFC256D32D0009E95F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeJSWidgetHeightHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +104,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE36342E256D934500A833DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE870AF5256D32D0009E95F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +126,8 @@
 			children = (
 				18657F4A2476291800263867 /* RCNativeiOSSDK */,
 				18657F58247629AF00263867 /* RCNativeiOSSDKExample */,
+				CE870AF9256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */,
+				CE363432256D934500A833DF /* RCNativeiOSSDKExampleTests */,
 				18657F492476291800263867 /* Products */,
 				CE4BBC14253F5AD30058867A /* Frameworks */,
 			);
@@ -100,6 +138,8 @@
 			children = (
 				18657F482476291800263867 /* RCNativeiOSSDK.framework */,
 				18657F57247629AF00263867 /* RCNativeiOSSDKExample.app */,
+				CE870AF8256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.xctest */,
+				CE363431256D934500A833DF /* RCNativeiOSSDKExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,11 +172,29 @@
 			path = RCNativeiOSSDKExample;
 			sourceTree = "<group>";
 		};
+		CE363432256D934500A833DF /* RCNativeiOSSDKExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */,
+				CE363435256D934500A833DF /* Info.plist */,
+			);
+			path = RCNativeiOSSDKExampleTests;
+			sourceTree = "<group>";
+		};
 		CE4BBC14253F5AD30058867A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE870AF9256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE870AFA256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift */,
+				CE870AFC256D32D0009E95F4 /* Info.plist */,
+			);
+			path = RCNativeiOSSDKExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,13 +248,49 @@
 			productReference = 18657F57247629AF00263867 /* RCNativeiOSSDKExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CE363430256D934500A833DF /* RCNativeiOSSDKExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE363438256D934500A833DF /* Build configuration list for PBXNativeTarget "RCNativeiOSSDKExampleTests" */;
+			buildPhases = (
+				CE36342D256D934500A833DF /* Sources */,
+				CE36342E256D934500A833DF /* Frameworks */,
+				CE36342F256D934500A833DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE363437256D934500A833DF /* PBXTargetDependency */,
+			);
+			name = RCNativeiOSSDKExampleTests;
+			productName = RCNativeiOSSDKExampleTests;
+			productReference = CE363431256D934500A833DF /* RCNativeiOSSDKExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE870AF7256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE870B01256D32D0009E95F4 /* Build configuration list for PBXNativeTarget "RCNativeiOSSDKExampleUITests" */;
+			buildPhases = (
+				CE870AF4256D32D0009E95F4 /* Sources */,
+				CE870AF5256D32D0009E95F4 /* Frameworks */,
+				CE870AF6256D32D0009E95F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE870AFE256D32D0009E95F4 /* PBXTargetDependency */,
+			);
+			name = RCNativeiOSSDKExampleUITests;
+			productName = RCNativeiOSSDKExampleUITests;
+			productReference = CE870AF8256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		18657F3F2476291800263867 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = Revcontent;
 				TargetAttributes = {
@@ -206,6 +300,14 @@
 					};
 					18657F56247629AF00263867 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					CE363430256D934500A833DF = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 18657F56247629AF00263867;
+					};
+					CE870AF7256D32D0009E95F4 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 18657F56247629AF00263867;
 					};
 				};
 			};
@@ -224,6 +326,8 @@
 			targets = (
 				18657F472476291800263867 /* RCNativeiOSSDK */,
 				18657F56247629AF00263867 /* RCNativeiOSSDKExample */,
+				CE870AF7256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */,
+				CE363430256D934500A833DF /* RCNativeiOSSDKExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +347,20 @@
 				18657F66247629B200263867 /* LaunchScreen.storyboard in Resources */,
 				18657F63247629B200263867 /* Assets.xcassets in Resources */,
 				18657F61247629AF00263867 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE36342F256D934500A833DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE870AF6256D32D0009E95F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,13 +389,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE36342D256D934500A833DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE363434256D934500A833DF /* RCNativeiOSSDKExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE870AF4256D32D0009E95F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE870AFB256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE363437256D934500A833DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18657F56247629AF00263867 /* RCNativeiOSSDKExample */;
+			targetProxy = CE363436256D934500A833DF /* PBXContainerItemProxy */;
+		};
 		CE63571F254B0A6F00990D7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18657F472476291800263867 /* RCNativeiOSSDK */;
 			targetProxy = CE63571E254B0A6F00990D7E /* PBXContainerItemProxy */;
+		};
+		CE870AFE256D32D0009E95F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18657F56247629AF00263867 /* RCNativeiOSSDKExample */;
+			targetProxy = CE870AFD256D32D0009E95F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -514,6 +658,96 @@
 			};
 			name = Release;
 		};
+		CE363439256D934500A833DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9H27THJ39Y;
+				INFOPLIST_FILE = RCNativeiOSSDKExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = w.RCNativeiOSSDKExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCNativeiOSSDKExample.app/RCNativeiOSSDKExample";
+			};
+			name = Debug;
+		};
+		CE36343A256D934500A833DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 282L6YEX2R;
+				INFOPLIST_FILE = RCNativeiOSSDKExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = w.RCNativeiOSSDKExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCNativeiOSSDKExample.app/RCNativeiOSSDKExample";
+			};
+			name = Release;
+		};
+		CE870AFF256D32D0009E95F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9H27THJ39Y;
+				INFOPLIST_FILE = RCNativeiOSSDKExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = w.RCNativeiOSSDKExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RCNativeiOSSDKExample;
+			};
+			name = Debug;
+		};
+		CE870B00256D32D0009E95F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 282L6YEX2R;
+				INFOPLIST_FILE = RCNativeiOSSDKExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = w.RCNativeiOSSDKExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RCNativeiOSSDKExample;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -540,6 +774,24 @@
 			buildConfigurations = (
 				18657F69247629B200263867 /* Debug */,
 				18657F6A247629B200263867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE363438256D934500A833DF /* Build configuration list for PBXNativeTarget "RCNativeiOSSDKExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE363439256D934500A833DF /* Debug */,
+				CE36343A256D934500A833DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE870B01256D32D0009E95F4 /* Build configuration list for PBXNativeTarget "RCNativeiOSSDKExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE870AFF256D32D0009E95F4 /* Debug */,
+				CE870B00256D32D0009E95F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
