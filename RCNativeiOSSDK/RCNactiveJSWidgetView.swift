@@ -25,6 +25,7 @@ private let widgetSubIdKey = "{sub-ids}"
 private let sourceUrlKey = "{source-url}"
 private let gdpr = "{gdpr}"
 private let gdprConsent = "{gdpr-consent}"
+private let usPrivacy = "{CCPA_STRING}"
 
 
 
@@ -36,6 +37,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   private var widgetSubId:[String:String]?
   private var isGDPREnabled = false
   private var GDPRConsent: String?
+  private var CCPAString: String?
   
   private weak var containerView: UIView!
   
@@ -108,7 +110,7 @@ public class RCNactiveJSWidgetView: WKWebView {
       </head>
       <body>
       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no\">
-      <div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-gdpr=\"\(gdpr)\" data-gdpr-consent=\"\(gdprConsent)\" data-sub-ids=\"{sub-ids}\">
+      <div id=\"rc-widget-27bbf8\" data-rc-widget data-widget-host=\"{widget-host}\" data-endpoint=\"{endpoint}\" data-is-secured=\"{is-secured}\" data-widget-id=\"{widget-id}\" data-gdpr=\"\(gdpr)\" data-gdpr-consent=\"\(gdprConsent)\" data-us-privacy=\"\(usPrivacy)\" data-sub-ids=\"{sub-ids}\">
       </div>
       <script src=\"{js-src}\" defer=\"{defer}\"></script>
       </body>
@@ -154,6 +156,10 @@ public class RCNactiveJSWidgetView: WKWebView {
     GDPRConsent = consent
   }
   
+  public func setCCPA(_ CCPAString: String?) {
+    self.CCPAString = CCPAString
+  }
+  
   public func loadWidget() {
     if let message = validateWidget(){
       NSLog(message)
@@ -186,6 +192,7 @@ public class RCNactiveJSWidgetView: WKWebView {
     result = result.replacingOccurrences(of: deferKey, with: deferVal)
     result = result.replacingOccurrences(of: gdpr, with: isGDPREnabled ? "1" : "0")
     result = result.replacingOccurrences(of: gdprConsent, with: GDPRConsent ?? "")
+    result = result.replacingOccurrences(of: usPrivacy, with: CCPAString ?? "")
     
     if self.widgetSubId != nil {
       let jsonData = try? JSONSerialization.data(withJSONObject: self.widgetSubId!, options: [])
