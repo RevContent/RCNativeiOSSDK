@@ -35,7 +35,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   private var siteUrl:String?
   private var baseUrl:String?
   private var widgetSubId:[String:String]?
-  private var isGDPREnabled = false
+  private var isGDPREnabled: Bool?
   private var GDPRConsent: String?
   private var CCPAString: String?
   
@@ -151,8 +151,8 @@ public class RCNactiveJSWidgetView: WKWebView {
     self.widgetSubId = widgetSubId
   }
   
-  public func setGDPRConsent(_ consent: String?) {
-    isGDPREnabled = consent != nil
+  public func setGDPRConsent(_ consent: String?, isEnabled: Bool?) {
+    isGDPREnabled = isEnabled
     GDPRConsent = consent
   }
   
@@ -190,7 +190,10 @@ public class RCNactiveJSWidgetView: WKWebView {
 //        result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
     result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
     result = result.replacingOccurrences(of: deferKey, with: deferVal)
-    result = result.replacingOccurrences(of: gdpr, with: isGDPREnabled ? "1" : "0")
+    result = result.replacingOccurrences(of: gdpr, with: "")
+    if let isGDPREnabled = isGDPREnabled {
+      result = result.replacingOccurrences(of: gdpr, with: isGDPREnabled ? "1" : "0")
+    }
     result = result.replacingOccurrences(of: gdprConsent, with: GDPRConsent ?? "")
     result = result.replacingOccurrences(of: usPrivacy, with: CCPAString ?? "")
     
