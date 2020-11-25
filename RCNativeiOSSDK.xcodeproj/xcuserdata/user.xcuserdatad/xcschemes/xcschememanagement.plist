@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>RCNativeiOSSDKExampleTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
 		<key>RCNativeiOSSDKTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>18657F56247629AF00263867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE363430256D934500A833DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
