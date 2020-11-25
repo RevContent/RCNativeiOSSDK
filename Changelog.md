@@ -2,6 +2,7 @@
 
 **Added**
 - Changelog.md
-
+- Unit and UI tests
+- CCPA & GDPR
 
 

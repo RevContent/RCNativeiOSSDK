@@ -23,6 +23,10 @@ class WidgetViewController: UIViewController, WidgetViewable {
     widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);
     // baseUrl is optional.
     widget.setBaseUrl(baseUrl: "https://performance.revcontent.dev")
+    // GDPR is optional
+    widget.setGDPRConsent("put_your_base64encoded-consent")
+    // CCPA is optional
+    widget.setCCPA("put_your_CCPA_consent_string")
     widget.delegate = self
     return widget
   }()
