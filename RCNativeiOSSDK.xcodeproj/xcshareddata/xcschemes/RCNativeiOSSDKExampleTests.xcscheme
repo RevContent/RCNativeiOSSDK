@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18657F56247629AF00263867"
+               BuildableName = "RCNativeiOSSDKExample.app"
+               BlueprintName = "RCNativeiOSSDKExample"
+               ReferencedContainer = "container:RCNativeiOSSDK.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Release"
@@ -13,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE363430256D934500A833DF"
@@ -23,7 +39,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE870AF7256D32D0009E95F4"
@@ -44,6 +60,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "18657F56247629AF00263867"
+            BuildableName = "RCNativeiOSSDKExample.app"
+            BlueprintName = "RCNativeiOSSDKExample"
+            ReferencedContainer = "container:RCNativeiOSSDK.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -51,6 +76,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "18657F56247629AF00263867"
+            BuildableName = "RCNativeiOSSDKExample.app"
+            BlueprintName = "RCNativeiOSSDKExample"
+            ReferencedContainer = "container:RCNativeiOSSDK.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
