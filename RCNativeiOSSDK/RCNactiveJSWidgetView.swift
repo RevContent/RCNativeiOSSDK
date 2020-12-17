@@ -38,6 +38,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   private var isGDPREnabled: Bool?
   private var GDPRConsent: String?
   private var CCPAString: String?
+  private var widgetLoadingDate: Date?
   
   private weak var containerView: UIView!
   
@@ -167,6 +168,7 @@ public class RCNactiveJSWidgetView: WKWebView {
     }
     self.loadHTMLString(generateWidgetHTML(),
                         baseURL: URL(string: baseUrl ?? defaultBaseURL))
+    widgetLoadingDate = Date()
   }
     
   private func validateWidget() -> String? {
@@ -206,6 +208,13 @@ public class RCNactiveJSWidgetView: WKWebView {
       result = result.replacingOccurrences(of: widgetSubIdKey, with: "")
     }
     return result
+  }
+  
+  public func clearCache() {
+    if let date = widgetLoadingDate {
+      URLCache.shared.removeCachedResponses(since: date)
+      widgetLoadingDate = Date()
+    }
   }
 }
 

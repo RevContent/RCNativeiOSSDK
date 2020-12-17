@@ -90,6 +90,14 @@ class ViewController: UIViewController {
 }
 
 ```
+
+Clear cache
+
+```swft
+//You can clear cache by this method. 
+widgetView.clearCache()
+```
+
 Conform your view controller to  ```RCNativeJSWidgetViewDelegate``` and get information about widgetView height.
 
 ### GDPR
