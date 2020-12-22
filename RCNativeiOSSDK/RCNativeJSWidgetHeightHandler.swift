@@ -16,7 +16,7 @@ class RCNativeJSWidgetHeightHandler: NSObject {
   private var timesMatched = 0
   var heightDidChange: ((CGFloat)->())?
   
-  init(widgetView: RCNactiveJSWidgetView) {
+  init(widgetView: RCNactiveJSWidgetView?) {
     self.widgetView = widgetView
   }
   

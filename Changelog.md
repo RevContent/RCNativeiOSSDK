@@ -1,3 +1,9 @@
+# [0.0.12] - 2020-12-22
+
+**Fixed**
+- issue caused by lazy loading
+
+
 # [0.0.11] - 2020-12-11
 
 **Added**

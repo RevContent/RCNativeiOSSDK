@@ -42,7 +42,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   
   private weak var containerView: UIView!
   
-  lazy var heightContraint: NSLayoutConstraint = {
+  lazy var heightConstraint: NSLayoutConstraint = {
     let constraint = NSLayoutConstraint(item: self,
                                         attribute: .height,
                                         relatedBy: .equal,
@@ -62,16 +62,7 @@ public class RCNactiveJSWidgetView: WKWebView {
     return configuration
   }()
   
-  lazy var heightHandler: RCNativeJSWidgetHeightHandler = {
-    let handler = RCNativeJSWidgetHeightHandler(widgetView: self)
-    handler.heightDidChange = { [weak self] newHeight in
-      guard let `self` = self else { return }
-      self.heightContraint.constant = newHeight
-      self.layoutIfNeeded()
-      self.delegate?.widgetView(self, didUpdateHeight: newHeight)
-    }
-    return handler
-  }()
+  var heightHandler: RCNativeJSWidgetHeightHandler?
   public weak var delegate: RCNativeJSWidgetViewDelegate?
   
   
@@ -89,7 +80,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   }
   
   deinit {
-    heightHandler.stopObservingHeight()
+    heightHandler?.stopObservingHeight()
     debugPrint("\(String(describing: self)): deinited")
   }
   
@@ -239,7 +230,17 @@ extension RCNactiveJSWidgetView: WKNavigationDelegate {
   }
   
   public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    heightHandler.startObservingHeight()
+    if heightHandler == nil {
+      let handler = RCNativeJSWidgetHeightHandler(widgetView: self)
+      handler.heightDidChange = { [weak self] newHeight in
+        guard let `self` = self else { return }
+        self.heightConstraint.constant = newHeight
+        self.layoutIfNeeded()
+        self.delegate?.widgetView(self, didUpdateHeight: newHeight)
+      }
+      heightHandler = handler
+    }
+    heightHandler?.startObservingHeight()
   }
 }
 
