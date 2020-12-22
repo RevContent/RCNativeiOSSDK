@@ -42,6 +42,7 @@ class WidgetViewController: UIViewController, WidgetViewable {
 
 extension WidgetViewController: RCNativeJSWidgetViewDelegate {
   func widgetView(_ widgetView: RCNactiveJSWidgetView, didUpdateHeight height: CGFloat) {
-    // handle widgetView heigth changes
+    // handle widgetView height changes
   }
 }
+
