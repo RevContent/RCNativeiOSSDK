@@ -223,7 +223,9 @@ public class RCNativeSliderBanner: NSObject {
       bannerView.scrollView.transform = CGAffineTransform(scaleX: scale, y: scale)
       bannerViewWidthConstraint.constant = bannerView.scrollView.contentSize.width * scale
       bannerViewHeightConstraint.constant = bannerView.scrollView.contentSize.height * scale
-      bannerTopConstraint.constant = -(bannerViewHeightConstraint.constant + closeButtonSize.height)
+      if isBannerShown {
+        bannerTopConstraint.constant = -(bannerViewHeightConstraint.constant + closeButtonSize.height)
+      }
       presentingController?.view.layoutIfNeeded()
     }
   }
