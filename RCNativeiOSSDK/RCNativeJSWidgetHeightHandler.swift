@@ -8,15 +8,16 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 class RCNativeJSWidgetHeightHandler: NSObject {
-  weak var widgetView: RCNactiveJSWidgetView?
+  weak var widgetView: WKWebView?
   private var isHeightAdjusted = false
   private var oldHeight = CGFloat.zero
   private var timesMatched = 0
   var heightDidChange: ((CGFloat)->())?
   
-  init(widgetView: RCNactiveJSWidgetView?) {
+  init(widgetView: WKWebView?) {
     self.widgetView = widgetView
   }
   
@@ -40,7 +41,6 @@ class RCNativeJSWidgetHeightHandler: NSObject {
     if !isHeightAdjusted {
       heightDidChange?(oldHeight)
     }
-//    print("height content: \(widgetView?.scrollView.contentSize.height)")
   }
   
   func startObservingHeight() {
@@ -54,7 +54,6 @@ class RCNativeJSWidgetHeightHandler: NSObject {
   private func evaluateHeightScript() {
     widgetView?.evaluateJavaScript("document.body.scrollHeight", completionHandler: { [weak self] (result, error) in
       guard let height = result as? CGFloat else { return }
-//      print("height: \(height)")
       self?.heightDidChange?(height)
       self?.isHeightAdjusted = true
     })
