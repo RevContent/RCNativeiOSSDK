@@ -143,7 +143,6 @@
 				CE870AF9256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */,
 				CE363432256D934500A833DF /* RCNativeiOSSDKExampleTests */,
 				18657F492476291800263867 /* Products */,
-				CE4BBC14253F5AD30058867A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,13 +204,6 @@
 				CE363435256D934500A833DF /* Info.plist */,
 			);
 			path = RCNativeiOSSDKExampleTests;
-			sourceTree = "<group>";
-		};
-		CE4BBC14253F5AD30058867A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE870AF9256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */ = {
