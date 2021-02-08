@@ -17,8 +17,9 @@ A CocoaPods library written in Swift for the Revcontent to enables you to receiv
 
   spec.source        = { :git => "https://github.com/RevContent/RCNativeiOSSDK.git", :tag => "#{spec.version}" }
   spec.source_files  = "RCNativeiOSSDK/**/*.{h,m,swift}"
+  spec.resources = ["RCNativeiOSSDK/Assets/**/*.{xib,png,jpeg,jpg}"]
   spec.resource_bundles = {
-    'RCNativeiOSSDK' => ['RCNativeiOSSDK/Assets/**/*']
+    'RCNativeOSSDK' => ['RCNativeiOSSDK/Assets/**/*']
   }
 
 end

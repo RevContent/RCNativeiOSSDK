@@ -169,7 +169,7 @@
 				CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */,
 				CE0855F425BEB3F700B5900C /* RCNativeSliderBanner.swift */,
 				CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */,
-				CE0855FE25BEDF3D00B5900C /* Icons.xcassets */,
+				CE26E8D825D1D16300CFE2CB /* Assets */,
 				CE08560625BF0AA300B5900C /* UIImage+Extension.swift */,
 			);
 			path = RCNativeiOSSDK;
@@ -188,6 +188,14 @@
 				18657F67247629B200263867 /* Info.plist */,
 			);
 			path = RCNativeiOSSDKExample;
+			sourceTree = "<group>";
+		};
+		CE26E8D825D1D16300CFE2CB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CE0855FE25BEDF3D00B5900C /* Icons.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		CE363432256D934500A833DF /* RCNativeiOSSDKExampleTests */ = {
