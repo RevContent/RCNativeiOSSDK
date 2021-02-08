@@ -12,7 +12,7 @@ A CocoaPods library written in Swift for the Revcontent to enables you to receiv
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "Chris" => "chris@revcontent.com" }
 
-  spec.ios.deployment_target = "10.0"
+  spec.ios.deployment_target = "11.0"
   spec.swift_version = "5.0"
 
   spec.source        = { :git => "https://github.com/RevContent/RCNativeiOSSDK.git", :tag => "#{spec.version}" }
