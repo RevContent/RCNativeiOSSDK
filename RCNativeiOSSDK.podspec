@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RCNativeiOSSDK"
-  spec.version      = "0.0.12"
+  spec.version      = "0.0.13"
   spec.summary      = "A CocoaPods library written in Swift for Revcontent."
 
   spec.description  = <<-DESC
@@ -12,10 +12,14 @@ A CocoaPods library written in Swift for the Revcontent to enables you to receiv
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "Chris" => "chris@revcontent.com" }
 
-  spec.ios.deployment_target = "10.0"
+  spec.ios.deployment_target = "11.0"
   spec.swift_version = "5.0"
 
   spec.source        = { :git => "https://github.com/RevContent/RCNativeiOSSDK.git", :tag => "#{spec.version}" }
   spec.source_files  = "RCNativeiOSSDK/**/*.{h,m,swift}"
+  spec.resources = ["RCNativeiOSSDK/Assets/**/*.{xib,png,jpeg,jpg}"]
+  spec.resource_bundles = {
+    'RCNativeOSSDK' => ['RCNativeiOSSDK/Assets/**/*']
+  }
 
 end

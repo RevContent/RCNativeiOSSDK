@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		18657F4D2476291800263867 /* RCNativeiOSSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 18657F4B2476291800263867 /* RCNativeiOSSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18657F5A247629AF00263867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F59247629AF00263867 /* AppDelegate.swift */; };
-		18657F5E247629AF00263867 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F5D247629AF00263867 /* MenuViewController.swift */; };
+		18657F5E247629AF00263867 /* WidgetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F5D247629AF00263867 /* WidgetsViewController.swift */; };
 		18657F61247629AF00263867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18657F5F247629AF00263867 /* Main.storyboard */; };
 		18657F63247629B200263867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18657F62247629B200263867 /* Assets.xcassets */; };
 		18657F66247629B200263867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18657F64247629B200263867 /* LaunchScreen.storyboard */; };
@@ -17,11 +17,18 @@
 		18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */; };
 		651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651C036F2510CBB40093D6CD /* WidgetViewController.swift */; };
 		6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */; };
+		CE0855F525BEB3F700B5900C /* RCNativeSliderBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0855F425BEB3F700B5900C /* RCNativeSliderBanner.swift */; };
+		CE0855FA25BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */; };
+		CE0855FF25BEDF3E00B5900C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0855FE25BEDF3D00B5900C /* Icons.xcassets */; };
+		CE08560725BF0AA300B5900C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08560625BF0AA300B5900C /* UIImage+Extension.swift */; };
 		CE363434256D934500A833DF /* RCNativeiOSSDKExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */; };
 		CE635718254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */; };
 		CE63571C254B0A6F00990D7E /* RCNativeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; };
 		CE63571D254B0A6F00990D7E /* RCNativeiOSSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE870AFB256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE870AFA256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift */; };
+		CECC877325C9563B006010E4 /* BottomSlidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC877225C9563B006010E4 /* BottomSlidersViewController.swift */; };
+		CECC877825C95652006010E4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC877725C95652006010E4 /* MenuViewController.swift */; };
+		CECC878125C956C8006010E4 /* BottomSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC878025C956C8006010E4 /* BottomSliderViewController.swift */; };
 		CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +76,7 @@
 		18657F4C2476291800263867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18657F57247629AF00263867 /* RCNativeiOSSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCNativeiOSSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18657F59247629AF00263867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18657F5D247629AF00263867 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		18657F5D247629AF00263867 /* WidgetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
 		18657F60247629AF00263867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18657F62247629B200263867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18657F65247629B200263867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +85,10 @@
 		18657F6C24762A2200263867 /* RCNativeiOSSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDK.swift; sourceTree = "<group>"; };
 		651C036F2510CBB40093D6CD /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherWidgetViewController.swift; sourceTree = "<group>"; };
+		CE0855F425BEB3F700B5900C /* RCNativeSliderBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeSliderBanner.swift; sourceTree = "<group>"; };
+		CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeSliderBannerDelegate.swift; sourceTree = "<group>"; };
+		CE0855FE25BEDF3D00B5900C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		CE08560625BF0AA300B5900C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CE363431256D934500A833DF /* RCNativeiOSSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCNativeiOSSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDKExampleTests.swift; sourceTree = "<group>"; };
 		CE363435256D934500A833DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +96,9 @@
 		CE870AF8256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCNativeiOSSDKExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE870AFA256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDKExampleUITests.swift; sourceTree = "<group>"; };
 		CE870AFC256D32D0009E95F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECC877225C9563B006010E4 /* BottomSlidersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlidersViewController.swift; sourceTree = "<group>"; };
+		CECC877725C95652006010E4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CECC878025C956C8006010E4 /* BottomSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSliderViewController.swift; sourceTree = "<group>"; };
 		CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCNativeJSWidgetHeightHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +143,6 @@
 				CE870AF9256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */,
 				CE363432256D934500A833DF /* RCNativeiOSSDKExampleTests */,
 				18657F492476291800263867 /* Products */,
-				CE4BBC14253F5AD30058867A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +166,10 @@
 				18657F4C2476291800263867 /* Info.plist */,
 				CED02D71253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift */,
 				CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */,
+				CE0855F425BEB3F700B5900C /* RCNativeSliderBanner.swift */,
+				CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */,
+				CE26E8D825D1D16300CFE2CB /* Assets */,
+				CE08560625BF0AA300B5900C /* UIImage+Extension.swift */,
 			);
 			path = RCNativeiOSSDK;
 			sourceTree = "<group>";
@@ -161,15 +178,23 @@
 			isa = PBXGroup;
 			children = (
 				18657F59247629AF00263867 /* AppDelegate.swift */,
-				18657F5D247629AF00263867 /* MenuViewController.swift */,
-				651C036F2510CBB40093D6CD /* WidgetViewController.swift */,
-				6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */,
+				CECC877725C95652006010E4 /* MenuViewController.swift */,
+				CECC878525C956D0006010E4 /* BottomSlider */,
+				CECC877C25C956AA006010E4 /* Widgets */,
 				18657F5F247629AF00263867 /* Main.storyboard */,
 				18657F62247629B200263867 /* Assets.xcassets */,
 				18657F64247629B200263867 /* LaunchScreen.storyboard */,
 				18657F67247629B200263867 /* Info.plist */,
 			);
 			path = RCNativeiOSSDKExample;
+			sourceTree = "<group>";
+		};
+		CE26E8D825D1D16300CFE2CB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CE0855FE25BEDF3D00B5900C /* Icons.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		CE363432256D934500A833DF /* RCNativeiOSSDKExampleTests */ = {
@@ -181,13 +206,6 @@
 			path = RCNativeiOSSDKExampleTests;
 			sourceTree = "<group>";
 		};
-		CE4BBC14253F5AD30058867A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		CE870AF9256D32D0009E95F4 /* RCNativeiOSSDKExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +213,25 @@
 				CE870AFC256D32D0009E95F4 /* Info.plist */,
 			);
 			path = RCNativeiOSSDKExampleUITests;
+			sourceTree = "<group>";
+		};
+		CECC877C25C956AA006010E4 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				18657F5D247629AF00263867 /* WidgetsViewController.swift */,
+				651C036F2510CBB40093D6CD /* WidgetViewController.swift */,
+				6563710325133DDF00E0AC49 /* AnotherWidgetViewController.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		CECC878525C956D0006010E4 /* BottomSlider */ = {
+			isa = PBXGroup;
+			children = (
+				CECC877225C9563B006010E4 /* BottomSlidersViewController.swift */,
+				CECC878025C956C8006010E4 /* BottomSliderViewController.swift */,
+			);
+			path = BottomSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0855FF25BEDF3E00B5900C /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +410,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE635718254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift in Sources */,
+				CE08560725BF0AA300B5900C /* UIImage+Extension.swift in Sources */,
+				CE0855FA25BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift in Sources */,
 				CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */,
 				18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */,
+				CE0855F525BEB3F700B5900C /* RCNativeSliderBanner.swift in Sources */,
 				18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,9 +423,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECC878125C956C8006010E4 /* BottomSliderViewController.swift in Sources */,
 				6563710425133DDF00E0AC49 /* AnotherWidgetViewController.swift in Sources */,
-				18657F5E247629AF00263867 /* MenuViewController.swift in Sources */,
+				CECC877825C95652006010E4 /* MenuViewController.swift in Sources */,
+				18657F5E247629AF00263867 /* WidgetsViewController.swift in Sources */,
 				651C03702510CBB40093D6CD /* WidgetViewController.swift in Sources */,
+				CECC877325C9563B006010E4 /* BottomSlidersViewController.swift in Sources */,
 				18657F5A247629AF00263867 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,7 +622,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RCNativeiOSSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,7 +650,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RCNativeiOSSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

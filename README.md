@@ -93,12 +93,39 @@ class ViewController: UIViewController {
 
 Clear cache
 
-```swft
+```swift
 //You can clear cache by this method. 
 widgetView.clearCache()
 ```
 
 Conform your view controller to  ```RCNativeJSWidgetViewDelegate``` and get information about widgetView height.
+
+### Slider Unit usage
+
+Create slider unit.
+```swift  
+lazy var bottomSlider: RCNativeSliderBanner = {
+  let slider = RCNativeSliderBanner(bannerId: "put_your_banner_id", size: RCNativeSliderBanner.BannerSize)
+  slider.delegate = self
+  slider.presentingController = self
+  return slider
+}()
+```
+
+Use ```showImmediatelyAfterLoad``` property to manage when slider unit should be shown(by default `true`).
+
+Conform your view controller to  ```RCNativeSliderBannerDelegate``` and get information about slider unit events. 
+```swift  
+public protocol RCNativeSliderBannerDelegate: class {
+  func sliderBannerDidLoad(_ banner: RCNativeSliderBanner)
+  func sliderBannerWillAppear(_ banner: RCNativeSliderBanner)
+  func sliderBannerDidAppear(_ banner: RCNativeSliderBanner)
+  func sliderBannerDidSelect(_ banner: RCNativeSliderBanner)
+  func sliderBannerWillClose(_ banner: RCNativeSliderBanner)
+  func sliderBannerDidClose(_ banner: RCNativeSliderBanner)
+}
+```
+
 
 ### GDPR
 The General Data Protection Regulation (GDPR) is the toughest privacy and security law in the world. Though it was drafted and passed by the European Union (EU), it imposes obligations onto organizations anywhere, so long as they target or collect data related to people in the EU. The regulation was put into effect on May 25, 2018. 

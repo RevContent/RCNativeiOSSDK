@@ -9,17 +9,17 @@
 import UIKit
 import WebKit
 
-private let defaultBaseURL = "https://performance.revcontent.dev/"
+let defaultBaseURL = "https://performance.revcontent.dev/"
 private let widgetHostKey = "{widget-host}"
-private let widgetHostVal = "habitat"
+let widgetHostVal = "habitat"
 private let endPointKey = "{endpoint}"
-private let endPointVal = "trends.revcontent.com"
+ let endPointVal = "trends.revcontent.com"
 private let isSecuredKey = "{is-secured}"
 private let isSecuredVal = "true"
 private let jsSrcKey = "{js-src}"
-private let jsSrcVal = "https://assets.revcontent.com/master/delivery.js"
+let jsSrcVal = "https://assets.revcontent.com/master/delivery.js"
 private let deferKey = "{defer}"
-private let deferVal = "defer"
+let deferVal = "defer"
 private let widgetIdKey = "{widget-id}"
 private let widgetSubIdKey = "{sub-ids}"
 private let sourceUrlKey = "{source-url}"
