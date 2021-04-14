@@ -1,3 +1,8 @@
+# [0.0.14] - 2020-04-14
+
+**Added**
+- ability to open supported domains directly in App, avoiding opening Safari
+
 # [0.0.13] - 2020-02-02
 
 **Added**

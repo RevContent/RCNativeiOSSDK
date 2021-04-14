@@ -98,6 +98,12 @@ Clear cache
 widgetView.clearCache()
 ```
 
+When you support universal links and want to avoid opening Safari, just set supported domains.
+
+```
+widget.setSupportedUniversalLinkDomains(["google.com", "wiki.com"])
+```
+
 Conform your view controller to  ```RCNativeJSWidgetViewDelegate``` and get information about widgetView height.
 
 ### Slider Unit usage
