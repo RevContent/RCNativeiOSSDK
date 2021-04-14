@@ -21,6 +21,7 @@
 		CE0855FA25BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */; };
 		CE0855FF25BEDF3E00B5900C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0855FE25BEDF3D00B5900C /* Icons.xcassets */; };
 		CE08560725BF0AA300B5900C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08560625BF0AA300B5900C /* UIImage+Extension.swift */; };
+		CE2E0564262491200090F1A8 /* RCNativeRedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E0563262491200090F1A8 /* RCNativeRedirectHandler.swift */; };
 		CE363434256D934500A833DF /* RCNativeiOSSDKExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */; };
 		CE635718254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE635717254B093000990D7E /* RCNativeJSWidgetViewDelegate.swift */; };
 		CE63571C254B0A6F00990D7E /* RCNativeiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18657F482476291800263867 /* RCNativeiOSSDK.framework */; };
@@ -89,6 +90,7 @@
 		CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeSliderBannerDelegate.swift; sourceTree = "<group>"; };
 		CE0855FE25BEDF3D00B5900C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		CE08560625BF0AA300B5900C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		CE2E0563262491200090F1A8 /* RCNativeRedirectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeRedirectHandler.swift; sourceTree = "<group>"; };
 		CE363431256D934500A833DF /* RCNativeiOSSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCNativeiOSSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE363433256D934500A833DF /* RCNativeiOSSDKExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNativeiOSSDKExampleTests.swift; sourceTree = "<group>"; };
 		CE363435256D934500A833DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				CE0855F925BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift */,
 				CE26E8D825D1D16300CFE2CB /* Assets */,
 				CE08560625BF0AA300B5900C /* UIImage+Extension.swift */,
+				CE2E0563262491200090F1A8 /* RCNativeRedirectHandler.swift */,
 			);
 			path = RCNativeiOSSDK;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				CE08560725BF0AA300B5900C /* UIImage+Extension.swift in Sources */,
 				CE0855FA25BEDB7B00B5900C /* RCNativeSliderBannerDelegate.swift in Sources */,
 				CED02D72253DECD1005E4C1C /* RCNativeJSWidgetHeightHandler.swift in Sources */,
+				CE2E0564262491200090F1A8 /* RCNativeRedirectHandler.swift in Sources */,
 				18657F6E24762A2200263867 /* RCNativeiOSSDK.swift in Sources */,
 				CE0855F525BEB3F700B5900C /* RCNativeSliderBanner.swift in Sources */,
 				18657F6D24762A2200263867 /* RCNactiveJSWidgetView.swift in Sources */,

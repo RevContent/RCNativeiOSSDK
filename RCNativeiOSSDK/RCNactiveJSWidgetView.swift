@@ -39,6 +39,7 @@ public class RCNactiveJSWidgetView: WKWebView {
   private var GDPRConsent: String?
   private var CCPAString: String?
   private var widgetLoadingDate: Date?
+  private var supportedUniversalLinkDomains: [String]?
   
   private weak var containerView: UIView!
   
@@ -152,6 +153,10 @@ public class RCNactiveJSWidgetView: WKWebView {
     self.CCPAString = CCPAString
   }
   
+  public func setSupportedUniversalLinkDomains(_ domains: [String]?) {
+    self.supportedUniversalLinkDomains = domains
+  }
+  
   public func loadWidget() {
     if let message = validateWidget(){
       NSLog(message)
@@ -214,9 +219,8 @@ extension RCNactiveJSWidgetView: WKNavigationDelegate {
     if navigationAction.navigationType == .linkActivated {
       guard let url = navigationAction.request.url else { decisionHandler(.allow); return }
       let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-      print (url)
       if components?.scheme == "http" || components?.scheme == "https" {
-        UIApplication.shared.open(url)
+        RCNativeRedirectHandler.handleURL(url, supportedDomains: self.supportedUniversalLinkDomains)
         decisionHandler(.cancel)
       } else {
         decisionHandler(.allow)
