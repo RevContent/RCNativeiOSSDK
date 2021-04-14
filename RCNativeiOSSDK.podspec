@@ -2,6 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "RCNativeiOSSDK"
   spec.version      = "0.0.14"
+
   spec.summary      = "A CocoaPods library written in Swift for Revcontent."
 
   spec.description  = <<-DESC
